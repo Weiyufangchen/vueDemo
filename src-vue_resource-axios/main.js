@@ -2,12 +2,12 @@
 入口js
  */
 import Vue from 'vue'
-import {Button} from 'mint-ui'
-
+import VueResource from 'vue-resource'
 import App from './App'
-import './main.css'
 
-Vue.component(Button.name, Button)  //全局注册组件
+import './main.css'
+//声明使用插件
+Vue.use(VueResource)  //内部会给vm/组件对象添加一个属性 $http 对象（get()/post()）
 
 new Vue({
   el: '#app',
