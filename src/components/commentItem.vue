@@ -1,24 +1,19 @@
 <template>
   <ul class="list-group">
-    <li class="list-group-item">
+    <li class="list-group-item" v-for="(comment, index) in comments" :key="index">
       <div class="handle">
-        <a href="javascript:;">删除</a>
+        <a href="javascript:;" @click="deleteComment(comment, index)">删除</a>
       </div>
-      <p class="user"><span >xxx</span><span>说:</span></p>
-      <p class="centence">React不错!</p>
-    </li>
-    <li class="list-group-item">
-      <div class="handle">
-        <a href="javascript:;">删除</a>
-      </div>
-      <p class="user"><span >yyy</span><span>说:</span></p>
-      <p class="centence">React有点难!</p>
+      <p class="user"><span >{{comment.name}}</span><span>说:</span></p>
+      <p class="centence">{{comment.content}}</p>
     </li>
   </ul>
 </template>
 
 <script>
-  export default {}
+  export default {
+    props: ['comments', 'deleteComment'],
+  }
 </script>
 
 <style>
