@@ -8,7 +8,7 @@
     <div class="row">
       <div class="col-xs-2 col-xs-offset-2">
         <div class="list-group">
-          <!--路由链接-->
+          <!--路由链接，最终生成a标签-->
           <router-link class="list-group-item" to="/about">About</router-link>
           <router-link class="list-group-item" to="/home">Home</router-link>
         </div>
@@ -18,7 +18,7 @@
           <!--缓存对应的路由组件对象-->
           <keep-alive>
             <!--路由器视图：显示当前路由组件页面-->
-            <router-view/>
+            <router-view msg="abc"/> <!--msg会传递给对应的路由组件：about/home-->
           </keep-alive>
         </div>
       </div>

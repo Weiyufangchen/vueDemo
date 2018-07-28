@@ -28,7 +28,7 @@
       this.messageDetail = messageDetail
     },
     watch: {
-      '$route': function (value) {
+      '$route': function (value) {  //切换了路由，只是参数变了
         const id = +value.params.id
         const messageDetail = allMessageDetails.find(md => md.id === id)
         this.messageDetail = messageDetail

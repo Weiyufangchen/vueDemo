@@ -14,9 +14,14 @@ import MessageDetail from '../pages/messageDetail'
 Vue.use(VueRouter)
 
 export default new VueRouter({
-
+  //配置路由模式，mode
+  // 类型string，
+  // 默认'hash'(浏览器环境) | 'abstract'(Node.js环境)
+  // 可选['hash' | 'history' | 'abstract']
+  // mode: 'history',
+  //配置所有路由
   routes: [
-    //路由
+    //每一个对象代表路由
     {
       path: '/about',
       component: About
@@ -26,7 +31,7 @@ export default new VueRouter({
       component: Home,
       children: [
         {
-          path: '/home/news',
+          path: '/home/news',  //最左侧的斜杠永远代表根路径
           component: News
         },
         {
@@ -53,5 +58,8 @@ export default new VueRouter({
   ]
 })
 
-
-
+/*
+1. 一个构造函数VueRouter
+2. 2个对象$router/$route
+3. 3个组件router-link/router-view/keep-alive
+ */
